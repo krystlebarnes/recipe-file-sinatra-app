@@ -1,0 +1,29 @@
+<h1><%=@recipe.name%></h1>
+<h5>by <a href='/users/<%= @user.slug %>'><%=@user.name%></a></h5>
+<%if current_user == @user%>
+<div>
+<p>
+  <a class="button" href="/recipes/<%= @recipe.slug %>/edit">Edit Recipe</a>
+  <form action="/recipes/<%= @recipe.id %>/delete" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" id="submit" value="Delete Recipe">
+  </form>
+</p>
+</div>
+<%end%>
+<div>
+<p><i><%=@recipe.description%></i></p>
+<p>Serving Size: <%=@recipe.serving_size%> servings<br>
+  Prep Time: <%=@recipe.prep_time%> minutes<br>
+  Cook Time: <%=@recipe.cook_time%> minutes<br>
+  Total Time: <%=@recipe.prep_time + @recipe.cook_time%> minutes<br>
+</p>
+<h3>Ingredients:</h3>
+<p>
+  <%=@recipe.ingredients%>
+</p>
+<h3>Instructions:</h3>
+<p>
+  <%=@recipe.instructions%>
+</p>
+</div>
