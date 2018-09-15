@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   post "/signup" do
-    user = User.new(email: params[:email], password: params[:password])
+    user = User.new(name: params[:email], email: params[:email], password: params[:password])
     user.save
     session[:user_id] = user.id
     redirect to "/recipes"
