@@ -1,0 +1,27 @@
+<h1>Edit Recipe</h1>
+<form action="/recipes/<%= @recipe.id %>" method="POST">
+  <input type="hidden" name="_method" value="patch">
+
+  <label for="name">Name: </label>
+  <input type="text" name="name" id="name" value="<%=@recipe.name%>"></input>
+  <br>
+  <label for="description">Description: </label>
+  <textarea rows="4" cols="50" maxlength="500" name="description" id="description" value="<%=@recipe.description%>"></textarea>
+  <br>
+  <label for="serving_size">Serving Size: </label>
+  <input type="text" name="serving_size" id="serving_size" value="<%=@recipe.serving_size%>"></input>
+  <br>
+  <label for="prep_time">Prep Time: </label>
+  <input type="text" name="prep_time" id="prep_time" value="<%=@recipe.prep_time%>"></input> minutes
+  <br>
+  <label for="cook_time">Cook Time: </label>
+  <input type="text" name="cook_time" id="cook_time" value="<%=@recipe.cook_time%>"></input> minutes
+  <br>
+  <label for="ingredients">Ingredients: </label>
+  <textarea rows="15" cols="50" name="ingredients" id="ingredients" value="<%=@recipe.ingredients%>"></textarea>
+  <br>
+  <label for="instructions">Instructions: </label>
+  <textarea rows="20" cols="50" name="instructions" id="instructions" value="<%=@recipe.instructions%>"></textarea>
+  <br>
+  <input type="submit" id="submit" value="Submit">
+</form>
