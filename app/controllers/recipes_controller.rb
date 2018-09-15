@@ -9,4 +9,12 @@ class RecipesController < ApplicationController
     end
   end
 
+  get '/recipes/new' do
+    if logged_in?
+      erb :'/recipes/create_recipe'
+    else
+      redirect "/login"
+    end
+  end
+
 end
