@@ -1,0 +1,11 @@
+<h2>Welcome, <%=@user.name%></h2>
+<p><a class="button" href='/recipes/new'>Add Recipe</a>
+  <a class="button" href='/users/<%= @user.slug %>'>My Recipes</a>
+  <a class="button" href='/logout'>Logout</a>
+</p>
+<div>
+  <%Recipe.all.each do |recipe|%>
+  <div><p><a href='/recipes/<%= recipe.slug %>'><%=recipe.name%></a></p>
+  </div>
+  <%end%>
+</ul>
