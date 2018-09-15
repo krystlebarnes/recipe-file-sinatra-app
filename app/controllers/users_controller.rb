@@ -20,4 +20,12 @@ class UsersController < ApplicationController
     erb :'/users/show'
   end
 
+  get "/login" do
+    if logged_in?
+      redirect "/recipes"
+    else
+      erb :'/users/login'
+    end
+  end
+
 end
