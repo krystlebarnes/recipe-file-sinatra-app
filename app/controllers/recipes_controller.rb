@@ -49,4 +49,12 @@ class RecipesController < ApplicationController
     redirect "recipes/#{@recipe.id}"
   end
 
+  delete '/recipes/:id/delete' do
+    @recipe = Recipe.find_by_id(params[:id])
+    if logged_in? && current_user == @recipe.user
+      @recipe.delete
+    end
+    redirect "/recipes"
+  end
+
 end
