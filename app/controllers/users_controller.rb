@@ -1,4 +1,7 @@
+require 'rack-flash'
+
 class UsersController < ApplicationController
+  use Rack::Flash
 
   get "/signup" do
     if !logged_in?
@@ -11,10 +14,12 @@ class UsersController < ApplicationController
   post "/signup" do
     user = User.new(name: params[:email], email: params[:email], password: params[:password])
     if !user.save
-      redirect to "/signup"
+      flash[:message] = "Oops, something went wrong. Please make sure all fields are filled out and the password is at least 8 characters long."
+      redirect "/signup"
     else
+      user.save
       session[:user_id] = user.id
-      redirect to "/recipes"
+      redirect "/recipes"
     end
   end
 
@@ -38,6 +43,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect "/recipes"
     else
+      flash[:message] = "Oops, something went wrong. Let's try that again."
       redirect "/login"
     end
   end
