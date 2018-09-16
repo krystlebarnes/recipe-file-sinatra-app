@@ -43,4 +43,10 @@ class RecipesController < ApplicationController
     end
   end
 
+  patch '/recipes/:id' do
+    @recipe = Recipe.find_by_id(params[:id])
+    @recipe.update(:name => params[:name], :description => params[:description], :serving_size => params[:serving_size], :prep_time => params[:prep_time], :cook_time => params[:cook_time], :ingredients => params[:ingredients], :instructions => params[:instructions])
+    redirect "recipes/#{@recipe.id}"
+  end
+
 end
