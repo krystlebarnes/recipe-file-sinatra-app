@@ -8,7 +8,7 @@
   <input type="text" name="name" id="name" value="<%=@recipe.name%>"></input>
   <br>
   <b><label for="description">Description: </label></b><br>
-  <textarea style="white-space: pre-wrap;" rows="5" cols="100" maxlength="500" name="description" id="description" value="<%=@recipe.description%>"></textarea>
+  <textarea style="white-space: pre-wrap;" rows="5" cols="100" maxlength="500" name="description" id="description"><%=@recipe.description%></textarea>
   <br>
   <b><label for="serving_size">Serving Size: </label></b>
   <input type="text" name="serving_size" id="serving_size" value="<%=@recipe.serving_size%>"></input> servings
@@ -20,10 +20,10 @@
   <input type="text" name="cook_time" id="cook_time" value="<%=@recipe.cook_time%>"></input> minutes
   <br>
   <b><label for="ingredients">Ingredients<span style="color:red">*</span>: </label></b><br>
-  <textarea style="white-space: pre-wrap;" rows="20" cols="100" name="ingredients" id="ingredients" value="<%=@recipe.ingredients%>"></textarea>
+  <textarea style="white-space: pre-wrap;" rows="20" cols="100" name="ingredients" id="ingredients"><%=@recipe.ingredients%></textarea>
   <br>
   <b><label for="instructions">Instructions<span style="color:red">*</span>: </label></b><br>
-  <textarea style="white-space: pre-wrap;" rows="25" cols="100" name="instructions" id="instructions" value="<%=@recipe.instructions%>"></textarea>
+  <textarea style="white-space: pre-wrap;" rows="25" cols="100" name="instructions" id="instructions"><%=@recipe.instructions%></textarea>
   <br>
   <input type="submit" id="submit" value="Submit">
 </form>
