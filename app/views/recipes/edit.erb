@@ -1,30 +1,34 @@
 <h1>Edit Recipe</h1>
+<br>
+<br>
 <form action="/recipes/<%= @recipe.id %>" method="POST">
   <input type="hidden" name="_method" value="patch">
 
-  <label for="name">Name: </label>
+  <b><label for="name">Name<span style="color:red">*</span>: </label></b>
   <input type="text" name="name" id="name" value="<%=@recipe.name%>"></input>
   <br>
-  <label for="description">Description: </label>
-  <textarea rows="4" cols="50" maxlength="500" name="description" id="description" value="<%=@recipe.description%>"></textarea>
+  <b><label for="description">Description: </label></b><br>
+  <textarea style="white-space: pre-wrap;" rows="5" cols="100" maxlength="500" name="description" id="description" value="<%=@recipe.description%>"></textarea>
   <br>
-  <label for="serving_size">Serving Size: </label>
-  <input type="text" name="serving_size" id="serving_size" value="<%=@recipe.serving_size%>"></input>
+  <b><label for="serving_size">Serving Size: </label></b>
+  <input type="text" name="serving_size" id="serving_size" value="<%=@recipe.serving_size%>"></input> servings
   <br>
-  <label for="prep_time">Prep Time: </label>
+  <b><label for="prep_time">Prep Time: </label></b>
   <input type="text" name="prep_time" id="prep_time" value="<%=@recipe.prep_time%>"></input> minutes
   <br>
-  <label for="cook_time">Cook Time: </label>
+  <b><label for="cook_time">Cook Time: </label></b>
   <input type="text" name="cook_time" id="cook_time" value="<%=@recipe.cook_time%>"></input> minutes
   <br>
-  <label for="ingredients">Ingredients: </label>
-  <textarea rows="15" cols="50" name="ingredients" id="ingredients" value="<%=@recipe.ingredients%>"></textarea>
+  <b><label for="ingredients">Ingredients<span style="color:red">*</span>: </label></b><br>
+  <textarea style="white-space: pre-wrap;" rows="20" cols="100" name="ingredients" id="ingredients" value="<%=@recipe.ingredients%>"></textarea>
   <br>
-  <label for="instructions">Instructions: </label>
-  <textarea rows="20" cols="50" name="instructions" id="instructions" value="<%=@recipe.instructions%>"></textarea>
+  <b><label for="instructions">Instructions<span style="color:red">*</span>: </label></b><br>
+  <textarea style="white-space: pre-wrap;" rows="25" cols="100" name="instructions" id="instructions" value="<%=@recipe.instructions%>"></textarea>
   <br>
   <input type="submit" id="submit" value="Submit">
 </form>
+<br>
 <% if flash.has?(:message) %>
     <p style="color:red"><%= flash[:message] %></p>
 <% end %>
+<p><span style="color:red">*</span>Required fields.</p>
