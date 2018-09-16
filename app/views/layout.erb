@@ -19,6 +19,12 @@
         <%= yield %>
 
       <footer class="branding">
+        <%if logged_in?%>
+        <p>
+          <a class="button" style="background-color: #e7e7e7; border: .5px solid #555555; color: black; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px; border-radius: 5px;" href='/'>Home</a>
+          <a class="button" style="background-color: #e7e7e7; border: .5px solid #555555; color: black; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px; border-radius: 5px;" href='/logout'>Logout</a>
+        </p>
+        <%end%>
         <small>&copy; 2018 <strong>Recipe File</strong></small>
       </footer>
     </div>
