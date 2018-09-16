@@ -81,6 +81,18 @@
     margin-top: 20px;
     padding-top: 20px;
   }
+
+  .button {
+    background-color: #e7e7e7;
+    border: 1px solid #555555;
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -112,4 +124,5 @@
     font-size: 18px;
     line-height: 24px;
   }
+
 }

@@ -1,16 +1,6 @@
 <h1><%=@recipe.name%></h1>
 <h5>by <a href='/users/<%= @user.slug %>'><%=@user.name%></a></h5>
-<%if current_user == @user%>
-<div>
-<p>
-  <a class="button" href="/recipes/<%= @recipe.id %>/edit">Edit Recipe</a>
-  <form action="/recipes/<%= @recipe.id %>/delete" method="post">
-    <input id="hidden" type="hidden" name="_method" value="delete">
-    <input type="submit" id="submit" value="Delete Recipe">
-  </form>
-</p>
-</div>
-<%end%>
+<br>
 <div>
 <p><i><%=@recipe.description%></i></p>
 <p>Serving Size: <%=@recipe.serving_size%> servings<br>
@@ -27,3 +17,15 @@
   <%=line_breaker(@recipe.instructions)%>
 </p>
 </div>
+<%if current_user == @user%>
+<br>
+<div>
+<p>
+  <a class="button" style="background-color: #e7e7e7; border: .5px solid #555555; color: black; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px; border-radius: 5px;" href="/recipes/<%= @recipe.id %>/edit">Edit Recipe</a>
+  <form action="/recipes/<%= @recipe.id %>/delete" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input class="button" style="background-color: #e7e7e7; border: .5px solid #555555; color: black; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px; border-radius: 5px;" type="submit" id="submit" value="Delete Recipe">
+  </form>
+</p>
+</div>
+<%end%>
