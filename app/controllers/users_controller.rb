@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   post "/signup" do
-    user = User.new(name: params[:email], email: params[:email], password: params[:password])
+    user = User.new(name: params[:name], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
     if !user.save
       flash[:message] = "Oops, something went wrong. Please make sure all fields are filled out and the password is at least 8 characters long."
       redirect "/signup"
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
 
   get "/logout" do
     session.clear
-    redirect "/login"
+    redirect "/"
   end
 
 end
