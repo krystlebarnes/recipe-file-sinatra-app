@@ -21,11 +21,11 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(:name => params[:name], :description => params[:description], :serving_size => params[:serving_size], :prep_time => params[:prep_time], :cook_time => params[:cook_time], :ingredients => params[:ingredients], :instructions => params[:instructions])
     @recipe.user_id = current_user.id
     @recipe.save
-    redirect "/recipes/#{@recipe.slug}"
+    redirect "/recipes/#{@recipe.id}"
   end
 
-  get '/recipes/:slug' do
-    @recipe = Recipe.find_by_slug(params[:slug])
+  get '/recipes/:id' do
+    @recipe = Recipe.find_by_id(params[:id])
     if logged_in?
       @user = @recipe.user
       erb :'/recipes/show'
@@ -34,8 +34,8 @@ class RecipesController < ApplicationController
     end
   end
 
-  get '/recipes/:slug/edit' do
-    @recipe = Recipe.find_by_slug(params[:slug])
+  get '/recipes/:id/edit' do
+    @recipe = Recipe.find_by_id(params[:id])
     if logged_in? && current_user == @recipe.user
       erb :'/recipes/edit'
     else

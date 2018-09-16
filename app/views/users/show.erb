@@ -2,7 +2,7 @@
 <div>
   <%@user.recipes.each do |recipe|%>
   <div>
-    <p><a href='/recipes/<%= recipe.slug %>'><%=recipe.name%></p>
+    <p><a href='/recipes/<%= recipe.id %>'><%=recipe.name%></p>
   </div>
   <%end%>
 </div>
