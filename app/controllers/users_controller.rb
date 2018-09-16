@@ -10,9 +10,12 @@ class UsersController < ApplicationController
 
   post "/signup" do
     user = User.new(name: params[:email], email: params[:email], password: params[:password])
-    user.save
-    session[:user_id] = user.id
-    redirect to "/recipes"
+    if !user.save
+      redirect to "/signup"
+    else
+      session[:user_id] = user.id
+      redirect to "/recipes"
+    end
   end
 
   get "/users/:slug" do
