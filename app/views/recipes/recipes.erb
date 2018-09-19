@@ -1,6 +1,6 @@
 <h2>Welcome, <%=@user.name%></h2>
-<p><a class="button" style="background-color: #e7e7e7; border: .5px solid #555555; color: black; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px; border-radius: 5px;" href='/recipes/new'>Add Recipe</a>
-  <a class="button" style="background-color: #e7e7e7; border: .5px solid #555555; color: black; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px; border-radius: 5px;" href='/users/<%= @user.slug %>'>My Recipes</a>
+<p><a class="button" href='/recipes/new'>Add Recipe</a>
+  <a class="button" href='/users/<%= @user.slug %>'>My Recipes</a>
 </p>
 <div>
   <%Recipe.all.each do |recipe|%>

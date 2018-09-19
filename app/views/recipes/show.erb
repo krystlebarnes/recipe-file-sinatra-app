@@ -21,10 +21,10 @@
 <br>
 <div>
 <p>
-  <a class="button" style="background-color: #e7e7e7; border: .5px solid #555555; color: black; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px; border-radius: 5px;" href="/recipes/<%= @recipe.id %>/edit">Edit Recipe</a>
+  <a class="button" href="/recipes/<%= @recipe.id %>/edit">Edit Recipe</a>
   <form action="/recipes/<%= @recipe.id %>/delete" method="post">
     <input id="hidden" type="hidden" name="_method" value="delete">
-    <input class="button" style="background-color: #e7e7e7; border: .5px solid #555555; color: black; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 12px; border-radius: 5px;" type="submit" id="submit" value="Delete Recipe">
+    <input class="button" type="submit" id="submit" value="Delete Recipe">
   </form>
   </p>
 </div>
