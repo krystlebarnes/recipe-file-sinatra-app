@@ -13,7 +13,7 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background-color: #fff4e5;
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
@@ -61,8 +61,8 @@
   }
 
   .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
+    background: #ffd699;
+    border: 1px solid #ffc877;
     float: right;
     padding: 2.08333333333%; /* 5px / 240px */
     width: 30%; /* 240px / 800px */
@@ -103,7 +103,7 @@
   }
 
   .footer_nav {
-    background-color: #2a8a9e;
+    background-color: #0d6496;
     color: white;
     font-size: 14px;
   }

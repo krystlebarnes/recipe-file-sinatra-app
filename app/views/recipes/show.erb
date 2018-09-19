@@ -21,10 +21,10 @@
 <br>
 <div>
 <p>
-  <a class="button" href="/recipes/<%= @recipe.id %>/edit">Edit Recipe</a>
+  <a class="button submit" href="/recipes/<%= @recipe.id %>/edit">Edit Recipe</a>
   <form action="/recipes/<%= @recipe.id %>/delete" method="post">
     <input id="hidden" type="hidden" name="_method" value="delete">
-    <input class="button" type="submit" id="submit" value="Delete Recipe">
+    <input class="button submit" type="submit" id="submit" value="Delete Recipe">
   </form>
   </p>
 </div>
