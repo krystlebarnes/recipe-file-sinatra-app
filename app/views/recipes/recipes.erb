@@ -1,6 +1,6 @@
 <h2>Welcome, <%=@user.name%></h2>
-<p><a class="button" href='/recipes/new'>Add Recipe</a>
-  <a class="button" href='/users/<%= @user.slug %>'>My Recipes</a>
+<p><a class="button top_nav" href='/recipes/new'>Add Recipe</a>
+  <a class="button top_nav" href='/users/<%= @user.slug %>'>My Recipes</a>
 </p>
 <div>
   <%Recipe.all.each do |recipe|%>
