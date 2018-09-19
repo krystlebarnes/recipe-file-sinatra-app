@@ -13,10 +13,12 @@
   <label for="password_confirmation">Confirm Password: </label>
   <input  type="password" name="password_confirmation" id="password_confirmation">
   <br>
-  <input type="submit" id="submit" value="Sign Up">
+  <br>
+  <input class="submit" type="submit" id="submit" value="Sign Up">
 </form>
 <br>
 <% if flash.has?(:message) %>
     <p style="color:red"><%= flash[:message] %></p>
 <% end %>
+<br>
 <p>Already have an account? <a href="/login">Log In.</a></p>

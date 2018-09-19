@@ -7,10 +7,12 @@
   <label for="password">Password: </label>
   <input  type="password" name="password" id="password">
   <br>
-  <input type="submit" id="submit" value="Log In">
+  <br>
+  <input class="submit" type="submit" id="submit" value="Log In">
 </form>
 <br>
 <% if flash.has?(:message) %>
     <p style="color:red"><%= flash[:message] %></p>
 <% end %>
+<br>
 <p>Don't have an account yet? <a href="/signup">Sign Up.</a></p>
