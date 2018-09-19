@@ -93,6 +93,18 @@
     font-size: 16px;
     border-radius: 12px;
   }
+
+  .submit {
+    background-color: #e7e7e7;
+    border: 1px solid #555555;
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 12px;
+  }
 }
 
 @media screen and (max-width: 600px) {
