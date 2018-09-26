@@ -6,9 +6,9 @@
 <p><i><%=@recipe.description%></i></p>
 <%end%>
 <p>
-<%if @recipe.description%>
+<%if @recipe.serving_size%>
   Serving Size: <%=@recipe.serving_size%> servings<br>
-  <%end%>
+<%end%>
   <%if @recipe.prep_time%>
   Prep Time: <%=@recipe.prep_time%> minutes<br>
   <%end%>
