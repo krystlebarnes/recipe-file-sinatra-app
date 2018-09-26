@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   post "/signup" do
-    user = User.new(name: params[:name], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
+    user = User.new(name: params[:name], username: params[:username], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
     if user.save
       user.save
       session[:user_id] = user.id
@@ -21,6 +21,9 @@ class UsersController < ApplicationController
       case
       when params[:name].empty?
         flash[:message] = "Oops, we need to know your name."
+        redirect "/signup"
+      when User.find_by(username: params[:username])
+        flash[:message] = "Oops, that username is already taken."
         redirect "/signup"
       when params[:email].match(/\A[^@]+@([^@\.]+\.)+[^@\.]+\z/) == nil
         flash[:message] = "Oops, we need to know your email."

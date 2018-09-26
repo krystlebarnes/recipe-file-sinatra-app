@@ -2,8 +2,13 @@
 <h5>by <a href='/users/<%= @user.slug %>'><%=@user.name%></a></h5>
 <br>
 <div>
+<%if @recipe.description%>
 <p><i><%=@recipe.description%></i></p>
-<p>Serving Size: <%=@recipe.serving_size%> servings<br>
+<%end%>
+<p>
+<%if @recipe.description%>
+  Serving Size: <%=@recipe.serving_size%> servings<br>
+  <%end%>
   <%if @recipe.prep_time%>
   Prep Time: <%=@recipe.prep_time%> minutes<br>
   <%end%>
