@@ -4,9 +4,23 @@
 <div>
 <p><i><%=@recipe.description%></i></p>
 <p>Serving Size: <%=@recipe.serving_size%> servings<br>
+  <%if @recipe.prep_time%>
   Prep Time: <%=@recipe.prep_time%> minutes<br>
+  <%end%>
+  <%if @recipe.cook_time%>
   Cook Time: <%=@recipe.cook_time%> minutes<br>
-  Total Time: <%=@recipe.prep_time + @recipe.cook_time%> minutes<br>
+  <%end%>
+  <%if @recipe.prep_time || @recipe.cook_time%>
+  Total Time: <%if @recipe.prep_time && @recipe.cook_time%>
+                <%=@recipe.prep_time + @recipe.cook_time%> minutes<br>
+              <%elsif @recipe.prep_time%>
+                <%=@recipe.prep_time%> minutes<br>
+              <%else%>
+                <%=@recipe.cook_time%> minutes<br>
+              <%end%>
+  <%end%>
+
+
 </p>
 <h3>Ingredients:</h3>
 <p>
