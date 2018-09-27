@@ -22,6 +22,9 @@ class UsersController < ApplicationController
       when params[:name].empty?
         flash[:message] = "Oops, we need to know your name."
         redirect "/signup"
+      when params[:username].empty?
+        flash[:message] = "Oops, we need a username for your account."
+        redirect "/signup"
       when User.find_by(username: params[:username])
         flash[:message] = "Oops, that username is already taken."
         redirect "/signup"
